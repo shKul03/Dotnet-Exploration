@@ -1,0 +1,9 @@
+Dotnet is a framework crated by Microsoft.
+The definition of a framework here is based on an older concept: A framework is a bundle of libraries.
+The modern definition of a framework: It is a bundle of code, libraries and pre-built infrastructure, that provides a set of conventions and a structure for building an application.
+Dotnet is built on the older understanding of the term 'framework'.
+
+
+SDK
+Software development kit
+A 
