@@ -1,0 +1,11 @@
+GET http://localhost:5198/
+
+###
+
+GET http://localhost:5198/games
+
+
+###
+
+
+GET http://localhost:5198/one-game/1
