@@ -2,7 +2,7 @@ GET http://localhost:5198/
 
 ###
 
-GET http://localhost:5198/games/3
+GET http://localhost:5198/games
 
 
 ###
@@ -24,6 +24,22 @@ Content-Type: application/json
 {
 "name": "The Witcher 3 - Super Edition",
 "genre": "RPG",
-"price": 79.99,
+"price": 12.00,
 "release": "2015-05-19"
 }
+
+###
+
+POST http://localhost:5198/new-game
+Content-Type: application/json
+
+{
+"name": "Dummy game to delete",
+"genre": "RPG",
+"price": 112.01,
+"release": "2015-05-19"
+}
+
+###
+
+DELETE http://localhost:5198/games/15
