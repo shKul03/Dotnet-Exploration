@@ -38,8 +38,42 @@ app.MapPost("/new-game", (CreateGameDto newGame) => {
     return Results.CreatedAtRoute(EndpointName, new {id = game.Id}, game);
 });
 
+app.MapPut("/games/{id}", (int id, UpdateGameDto updatedGame) =>
+{
+    //with find index:
+    var index = games.FindIndex(game => game.Id == id);
+    games[index] = new GameDto(
+        id,
+        updatedGame.Name,
+        updatedGame.Genre,
+        updatedGame.Price,
+        updatedGame.ReleaseDate
+    );
 
-// app.MapPut("/games/update-game/{id}");
+    return Results.NoContent();
+});
+
+
+//my version
+app.MapDelete("/games/{id}", (int id) =>
+{
+    var index = games.FindIndex(game => game.Id == id);
+    if (index == -1)
+    {
+        return Results.NotFound();
+    }
+    games.RemoveAt(index);
+    return Results.NoContent();
+});
+
+//tutor's version, but he doesnt really consider the removed variable and simply returns no content
+
+// app.MapDelete("/games/{id}", (int id) =>
+// {
+//     var removed = games.RemoveAll(game => game.Id == id);
+
+//     return removed == 0? Results.NotFound() : Results.NoContent();
+// });
 
 
 
